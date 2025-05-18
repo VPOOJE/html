@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .subject {
+            margin-bottom: 10px;
+        }
+        input, select {
+            margin-right: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SGPA Calculator</h1>
+    <div id="subjects">
+        <div class="subject">
+            <input type="text" placeholder="Subject Name" class="subject-name">
+            <input type="number" placeholder="Credits" class="credits" min="1" max="5">
+            <select class="grade">
+                <option value="10">O</option>
+                <option value="9">A+</option>
+                <option value="8">A</option>
+                <option value="7">B+</option>
+                <option value="6">B</option>
+                <option value="5">C</option>
+                <option value="0">F</option>
+            </select>
+        </div>
+    </div>
+    <button onclick="addSubject()">Add Another Subject</button>
+    <button onclick="calculateSGPA()">Calculate SGPA</button>
+    <div id="result"></div>
+
+    <script>
+        function addSubject() {
+            const subjectsDiv = document.getElementById('subjects');
+            const newSubject = document.createElement('div');
+            newSubject.className = 'subject';
+            newSubject.innerHTML = `
+                <input type="text" placeholder="Subject Name" class="subject-name">
+                <input type="number" placeholder="Credits" class="credits" min="1" max="5">
+                <select class="grade">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">F</option>
+                </select>
+            `;
+            subjectsDiv.appendChild(newSubject);
+        }
+
+        function calculateSGPA() {
+            const subjects = document.getElementsByClassName('subject');
+            let totalCredits = 0;
+            let totalGradePoints = 0;
+
+            for (let subject of subjects) {
+                const credits = parseFloat(subject.querySelector('.credits').value);
+                const grade = parseFloat(subject.querySelector('.grade').value);
+
+                if (isNaN(credits) || isNaN(grade)) {
+                    alert('Please fill in all fields correctly.');
+                    return;
+                }
+
+                totalCredits += credits;
+                totalGradePoints += credits * grade;
+            }
+
+            const sgpa = totalGradePoints / totalCredits;
+            
+            // For simplicity, we'll assume CGPA is the same as SGPA for this example
+            // In a real scenario, you'd need to track multiple semesters for CGPA
+            const cgpa = sgpa;
+
+            document.getElementById('result').innerHTML = `
+                <h2>Results:</h2>
+                <p>SGPA: ${sgpa.toFixed(2)}</p>
+        
+            `;
+        }
+    </script>
+</body>
+</html>

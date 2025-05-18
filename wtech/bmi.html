@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <div>
+        <input type="number" id="weight" placeholder="Enter weight in kg" step="0.1" required>
+        <input type="number" id="height" placeholder="Enter height in cm" step="0.1" required>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to m
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                alert('Please enter valid weight and height values.');
+                return;
+            }
+
+            const bmi = weight / (height * height);
+            let interpretation = '';
+
+            if (bmi < 18.5) {
+                interpretation = 'Underweight';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                interpretation = 'Normal weight';
+            } else if (bmi >= 25 && bmi < 30) {
+                interpretation = 'Overweight';
+            } else {
+                interpretation = 'Obese';
+            }
+
+            document.getElementById('result').innerHTML = `
+                <p>Your BMI is: ${bmi.toFixed(1)}</p>
+                <p>Interpretation: ${interpretation}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
