@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Layout</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+    }
+    .nav-link {
+      color: #007bff;
+    }
+    .crossed-box {
+      position: relative;
+      padding: 20px;
+      border: 2px solid #007bff;
+    }
+    .crossed-box:before,
+    .crossed-box:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #007bff;
+    }
+    .crossed-box:before {
+      transform: rotate(45deg);
+    }
+    .crossed-box:after {
+      transform: rotate(-45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-12 header">
+        <h1 class="mb-0">Enter Title Here</h1>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-3">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+        <nav>
+          <div class="nav nav-pills">
+            <a class="nav-link" href="#">Enter Title Here</a>
+            <a class="nav-link" href="#">Enter Title Here</a>
+            <a class="nav-link" href="#">Enter Title Here</a>
+            <a class="nav-link" href="#">Enter Title Here</a>
+            <a class="nav-link" href="#">Login</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-8">
+        <div class="crossed-box">
+          <h5>Enter Title Here</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Enter Text Here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
