@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+
+</head>
+<body>
+    <form action="signup.html" method="GET" enctype="multipart/form-data" >
+        <div>
+            <label for="username">username</label>
+        <input type="text" name="username" id="username" placeholder="username" maxlength="5" required>
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input type="email" for="email" name="email" id="email">
+        </div>
+        <!-- <div> -->
+            <!-- <input type="hidden" name="hidden" id="hidden" value="123"> -->
+        <!-- </div> -->
+
+        <div>
+             <label for="password">password</label>
+            <input type="password" name="password" id="password" placeholder="password"required minlength="5">
+        </div>
+        <div>
+            <label for="telephone number">telephone number</label>
+            <input type="tel" name="telephone number" id="telephone number">
+        </div>
+        <div>
+            <label for="dateofbirth">dateofbirth</label>
+            <input type="date" name="dateofbirth" id="dateofbirth" maxlength="4" min="1900">
+        </div>
+        <div>
+            <label for="about">about</label>
+            <textarea name="about" id="about" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            
+            <input type="checkbox" name="SMS Alert" id="SMS Alert">
+            <label for="SMS Alert">SMS Alert</label>
+        </div>
+        <div>
+            
+            <input type="checkbox" name="Email Alert" id="Email  Alert">
+            <label for="Email  Alert">Email  Alert</label>
+
+        </div>
+        <div>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">male</label>
+        </div>
+        <div>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">female</label>
+        </div>
+        <div>
+            <select name="state" id="state" multiple>
+                <option value="tamilnadu">TAMILNADU</option>
+                <option value="KERALA" label="KERALA"></option>
+                <option value="AP" label="AP"></option>
+                <option value="CHENNAI" label="CHENNAI"></option>
+                <option value="COIMBATORE" label="COIMBATORE"></option>
+            </select>
+        </div>
+        <div>
+            <label for="file">Resume</label>
+            <input type="file" name="file" id="file">
+        </div>
+    
+        <!-- <input type="image" src="C:\Users\pooja_M\Downloads\sumit.jpg"> -->
+        <button type="submit">signup</button>
+        <button type="reset">reset</button>
+    </form> 
+</body>
+</html>
